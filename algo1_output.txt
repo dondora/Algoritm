@@ -1,0 +1,12 @@
+Case start 
+1
+0
+Case #1 start
+1
+Case #1 end
+Case #2 start
+6
+Case #2 end
+Case #3 start
+24
+Case #3 end
