@@ -15,7 +15,8 @@
 //#include "Algo3.h"
 //#include "Algo4.h"
 //#include "Algo5.h"
-#include "Algo6.h"
+//#include "Algo6.h"
+#include "match_brace.h"
 using namespace std;
 
 
@@ -33,7 +34,9 @@ int main() {
 
 	//algo5();
 
-	algo6();
+	//algo6();
+
+	match_brace();
 
 	return 0;
 }
