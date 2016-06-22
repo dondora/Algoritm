@@ -41,7 +41,7 @@ void circular_string()
 
 int check()
 {
-	int max=-1;
+	int max=0;
 	FOR(size, 3, length+1)//문자열 길이 100자인것 까지 포함.
 	{
 		FOR(i, 0, length-size+1)//10글자중 10개가 회문임을 검사할때를 생각해보면 +1 하는 이유를 알수 있음.
