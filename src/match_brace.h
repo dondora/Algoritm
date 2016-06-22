@@ -12,7 +12,7 @@
 
 #define FOR(i, n, m) for(int (i)=(n);(i)<(m);(i)++)
 
-int testcase, input_length, target;
+int input_length, target;
 char input[10000];
 
 int check(int length, int t);
@@ -25,7 +25,7 @@ void match_brace()
 	freopen("match_brace_output.txt", "w", stdout);
 
 
-
+	int testcase;
 	scanf("%d", &testcase);
 	FOR(t, 0, testcase)
 	{
@@ -60,6 +60,7 @@ int check(int length, int t)
 	}
 	if(sum!=0)
 		return 0;
+
 
 	sum = 0;
 	FOR(i,0,t)

@@ -9,14 +9,15 @@
 #include <cstdio>
 #include <iostream>
 #include<algorithm>
-#include "Problem.h"
+//#include "Problem.h"
 //#include "Algo1.h"
 //#include "Algo2.h"
 //#include "Algo3.h"
 //#include "Algo4.h"
 //#include "Algo5.h"
 //#include "Algo6.h"
-#include "match_brace.h"
+//#include "match_brace.h"
+#include "circular_string.h"
 using namespace std;
 
 
@@ -36,7 +37,9 @@ int main() {
 
 	//algo6();
 
-	match_brace();
+	//match_brace();
+
+	circular_string();
 
 	return 0;
 }
