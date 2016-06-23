@@ -23,7 +23,7 @@ void circular_string()
 	setbuf(stdout, NULL);
 
 	freopen("circular_string_input.txt", "r", stdin);
-	freopen("circular_string_output.txt", "w", stdout);
+	//freopen("circular_string_output.txt", "w", stdout);
 
 	int testcase;
 	scanf("%d", &testcase);
