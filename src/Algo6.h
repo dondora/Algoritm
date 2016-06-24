@@ -1,6 +1,6 @@
 /*
  * Algo6.h
- *
+ * 정수 그룹의 합
  *  Created on: 2016. 6. 21.
  *      Author: don
  */
