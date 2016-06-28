@@ -18,7 +18,8 @@
 //#include "Algo6.h"
 //#include "match_brace.h"
 //#include "circular_string.h"
-#include "melody.h"
+//#include "melody.h"
+#include "2circle_color.h"
 using namespace std;
 
 
@@ -42,8 +43,9 @@ int main() {
 
 	//circular_string();
 
-	melody();
+	//melody();
 
+	circle_color();
 	return 0;
 }
 

@@ -27,7 +27,7 @@ int convertDire(int inputDire, int mirror);
 void algo5() {
 
 	FILE* fp1 = freopen("algo5_input.txt", "r", stdin);
-	FILE* fp2 = freopen("algo5_output.txt", "w", stdout);
+//	FILE* fp2 = freopen("algo5_output.txt", "w", stdout);
 
 	scanf("%d", &testcase);
 	FOR(t, 0, testcase)
@@ -55,7 +55,7 @@ void algo5() {
 		printf("#%d %d \n", t, sum);
 	}
 
-	fclose(fp2);
+//	fclose(fp2);
 	fclose(fp1);
 }
 
@@ -72,10 +72,9 @@ int check(int y, int x, int d)
 		return 0;
 	else
 	{
-		FOR(i, 0, N)
-		{
-			int modY = y+dire[d][0]*(i+1);
-			int modX = x+dire[d][1]*(i+1);
+
+			int modY = y+dire[d][0];
+			int modX = x+dire[d][1];
 
 			if (modY < 0 || modX < 0 || modY >= N || modX >= N)
 				return 0;
@@ -88,7 +87,11 @@ int check(int y, int x, int d)
 			{
 				return check(modY, modX, convertDire(d, 2))+1;
 			}
-		}
+			else
+			{
+				return check(modY, modX, d);
+			}
+
 	}
 	return 0;
 }
