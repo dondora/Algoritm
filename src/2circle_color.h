@@ -23,8 +23,10 @@ using namespace std;
 int V,G;
 int array[1000][1000]={{0,}};
 
-void bfs(int start);
+bool color[1000];
+bool flag[1000];
 
+int check();
 void circle_color()
 {
 
@@ -35,6 +37,15 @@ void circle_color()
 	scanf("%d", &testcase);
 	FOR(t, 0, testcase)
 	{
+		//init
+		FOR(i,0,1000)
+			FOR(j,0,1000) array[i][j]=0;
+		FOR(i,0,1000)
+		{
+			color[i]=false;
+			flag[i]=false;
+		}
+
 		scanf("%d %d", &V, &G );
 		FOR(i,0,G)
 		{
@@ -43,39 +54,98 @@ void circle_color()
 			array[v1][v2] = 1;
 			array[v2][v1] = 1;
 		}
+		int ret = check();
+		if(ret>0)
+		{
+			printf("%d ", ret);
+			FOR(i,0,V)
+			{
+				if(color[i]==true)
+					printf("%d ", i);
+			}
+			printf("\r\n");
+
+		}
+		else
+		{
+			printf("-1\n");
+		}
+
 	}
-	bfs(1);
+
 	printf("end\n");
 }
 
+
+int check()
+{
+
+	color[1]=true;//white
+	flag[1]=true;
+
+	int cnt=1;
+
+	FOR(s,1,V+1)
+	{
+		if (flag[s] == true) {
+			FOR(t, 1, V+1)//모든 정점을 순회하자...
+			{
+				if (array[s][t] == 1) {
+					if (flag[t] == true && color[t] == color[s])
+						return -1;
+					if (flag[t] != true) {
+						flag[t] = true;
+						color[t] = !color[s];
+						if(color[t]==true)
+							cnt++;
+					}
+				}
+			}
+		}
+	}
+	return cnt;
+}
+
+/*
 bool flags[1000];
+int color[1000];
+
 void bfs(int start)
 {
+	bool curColor = 1;//0:none, 1:w , 2:b
 	std::queue<int> Q;
 	Q.push(start);
 	flags[start] = true;
+	color[start] = curColor;
 	while(!Q.empty())
 	{
 		int v = Q.front();
 		Q.pop();
 		printf("%d ", v);
 
-			FOR(i,1,V+1)
+		if(color[v]==1) curColor=2;
+		if(color[v]==2) curColor=1;
+
+
+		FOR(i,1,V+1)
+		{
+			if(array[v][i]==1)
 			{
-				if(array[v][i]==1)
+				if(flags[i] != true)
 				{
-					if(flags[i] != true)
-					{
-						Q.push(i);
-						flags[i] = true;
-					}
+
+					Q.push(i);
+					flags[i] = true;
 				}
 			}
-
-
+		}
 	}
 	printf("\r\n");
+	FOR(i,0,V) printf("%s ", color[i]?"white":"black");
+	printf("\r\n");
+	printf("\r\n");
 }
+*/
 
 //int compare(const void *a , const void *b){
 //        return strcmp( (char*)a , (char*)b );
