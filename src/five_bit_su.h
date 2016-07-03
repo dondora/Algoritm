@@ -8,6 +8,9 @@
 #ifndef BIT_SU_H_
 #define BIT_SU_H_
 
+#include <cstdlib>
+#include <algorithm>
+
 #define FOR(index, init, max) for(int (index)=(init);(index)<(max);(index)++)
 
 void check(unsigned long num1, unsigned long num2, unsigned long& firstNum, unsigned long& totalNum);
@@ -29,6 +32,7 @@ void five_bit()
 		//printf("\r\n");
 		printf("%lu %lu \r\n", total, first);
 	}
+
 
 }
 

@@ -19,7 +19,9 @@
 //#include "match_brace.h"
 //#include "circular_string.h"
 //#include "melody.h"
-#include "2circle_color.h"
+//#include "2circle_color.h"
+//#include "five_bit_su.h"
+#include "moon_base.h"
 using namespace std;
 
 
@@ -45,7 +47,9 @@ int main() {
 
 	//melody();
 
-	circle_color();
+	//circle_color();
+	//five_bit();
+	moon_base();
 	return 0;
 }
 
