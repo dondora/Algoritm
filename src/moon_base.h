@@ -100,14 +100,13 @@ void check(int y, int x, int d, int cnt)
 		flag[y][x]=1;
 		check(y, x, convertDire('R',d), cnt);
 		check(y, x, convertDire('L',d), ++cnt);
-		--cnt;
 	}
+
 	else if( map[y][x]=='L' && flag[y][x]==0)
 	{
 		flag[y][x]=1;
 		check(y, x, convertDire('L',d), cnt);
 		check(y, x, convertDire('R',d), ++cnt);
-		--cnt;
 	}
 	else
 	{
